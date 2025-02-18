@@ -54,7 +54,8 @@ export class AnthropicService {
                 systemPrompt
             );
 
-            return response?.completion?.trim();
+
+            return response?.content[0]?.text;
         } catch (error) {
             console.error("Error in getCode:", error);
             throw error;
